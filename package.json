@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/ProtonMail/bip39.git"
   },
-  "author": "",
+  "author": "ProtonMail",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ProtonMail/bip39/issues"
