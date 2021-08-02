@@ -1,0 +1,8 @@
+{
+    "(*.ts|*.tsx|*.js)": [
+        "prettier --write",
+    ],
+    "*.json": "prettier --write",
+    "*.md": "prettier --write",
+    "package.json": "sort-package-json",
+}

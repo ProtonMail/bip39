@@ -1,19 +1,26 @@
 {
-  "name": "bip39",
-  "version": "1.0.0",
-  "description": "BIP39 JavaScript implementation",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ProtonMail/bip39.git"
-  },
-  "author": "ProtonMail",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ProtonMail/bip39/issues"
-  },
-  "homepage": "https://github.com/ProtonMail/bip39#readme"
+    "name": "bip39",
+    "version": "1.0.0",
+    "description": "BIP39 JavaScript implementation",
+    "homepage": "https://github.com/ProtonMail/bip39#readme",
+    "bugs": {
+        "url": "https://github.com/ProtonMail/bip39/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ProtonMail/bip39.git"
+    },
+    "license": "ISC",
+    "author": "ProtonMail",
+    "main": "index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "postinstall": "husky install"
+    },
+    "devDependencies": {
+        "husky": "^7.0.1",
+        "lint-staged": "^11.1.1",
+        "prettier": "^2.3.2",
+        "sort-package-json": "^1.50.0"
+    }
 }
