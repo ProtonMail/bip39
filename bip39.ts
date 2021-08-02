@@ -1,6 +1,7 @@
-import englishWordlist from './wordlists/english.json';
+import FixedLengthArray from "./types/fixedLengthArray";
+import words from './words';
 
-const DEFAULT_WORDLIST = englishWordlist;
+const DEFAULT_WORDLIST: FixedLengthArray<string, 2048> = words["english"];
 
 const INVALID_MNEMONIC = 'Invalid mnemonic';
 const INVALID_ENTROPY = 'Invalid entropy';
@@ -32,7 +33,7 @@ async function deriveChecksumBits(entropyArray: Uint8Array) {
     return bytesToBinary(hash).slice(0, CS);
 }
 
-export async function mnemonicToEntropy(mnemonic: string, wordlist: string[] = DEFAULT_WORDLIST) {
+export async function mnemonicToEntropy(mnemonic: string, wordlist: FixedLengthArray<string, 2048> = DEFAULT_WORDLIST) {
     if (!wordlist) {
         throw new Error(WORDLIST_REQUIRED);
     }
@@ -73,7 +74,7 @@ export async function mnemonicToEntropy(mnemonic: string, wordlist: string[] = D
     return entropy;
 }
 
-export async function entropyToMnemonic(entropy: Uint8Array, wordlist: string[] = DEFAULT_WORDLIST) {
+export async function entropyToMnemonic(entropy: Uint8Array, wordlist: FixedLengthArray<string, 2048> = DEFAULT_WORDLIST) {
     if (!wordlist) {
         throw new Error(WORDLIST_REQUIRED);
     }
@@ -100,7 +101,7 @@ export async function entropyToMnemonic(entropy: Uint8Array, wordlist: string[] 
         : words.join(' ');
 }
 
-export async function validateMnemonic(mnemonic: string, wordlist?: string[]) {
+export async function validateMnemonic(mnemonic: string, wordlist?: FixedLengthArray<string, 2048>) {
     try {
         await mnemonicToEntropy(mnemonic, wordlist);
     } catch (e) {
