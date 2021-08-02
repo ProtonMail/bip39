@@ -1,6 +1,6 @@
 {
     "name": "bip39",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "BIP39 JavaScript implementation",
     "homepage": "https://github.com/ProtonMail/bip39#readme",
     "bugs": {
