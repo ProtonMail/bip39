@@ -1,5 +1,5 @@
-import FixedLengthArray from "./types/fixedLengthArray";
-import words from './words';
+import FixedLengthArray from "../types/fixedLengthArray";
+import words from './wordlists/words';
 
 const DEFAULT_WORDLIST: FixedLengthArray<string, 2048> = words["english"];
 
