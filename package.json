@@ -1,5 +1,5 @@
 {
-    "name": "bip39",
+    "name": "@protontech/bip39",
     "version": "1.0.2",
     "description": "BIP39 JavaScript implementation",
     "homepage": "https://github.com/ProtonMail/bip39#readme",
