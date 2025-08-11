@@ -19,13 +19,13 @@ function binaryToByte(bin: string) {
     return parseInt(bin, 2);
 }
 
-function bytesToBinary(bytes: Uint8Array): string {
+function bytesToBinary(bytes: Uint8Array<ArrayBuffer>): string {
     const binaryArray: string[] = [];
     bytes.forEach((byte) => binaryArray.push(lpad(byte.toString(2), '0', 8)));
     return binaryArray.join('');
 }
 
-async function deriveChecksumBits(entropyArray: Uint8Array) {
+async function deriveChecksumBits(entropyArray: Uint8Array<ArrayBuffer>) {
     const ENT = entropyArray.length * 8;
     const CS = ENT / 32;
     const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', entropyArray));
@@ -73,7 +73,7 @@ export async function mnemonicToEntropy(mnemonic: string, wordlist: string[] = D
     return entropy;
 }
 
-export async function entropyToMnemonic(entropy: Uint8Array, wordlist: string[] = DEFAULT_WORDLIST) {
+export async function entropyToMnemonic(entropy: Uint8Array<ArrayBuffer>, wordlist: string[] = DEFAULT_WORDLIST) {
     if (!wordlist) {
         throw new Error(WORDLIST_REQUIRED);
     }
